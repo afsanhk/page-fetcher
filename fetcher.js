@@ -30,8 +30,8 @@ fs.access(path, fs.constants.F_OK, (err) => {
           // To the local path on your machine
           fs.writeFile(path, body, err => {
             if (err) {
-              console.log(`File path is invalid`)
-              return err;
+              console.log(`File path is invalid \n ${err}`)
+              process.exit();
             }
             // It should print out a message after completion of writing
             return console.log(`Downloaded and saved ${body.length} bytes to ${path}`)          
@@ -49,8 +49,8 @@ fs.access(path, fs.constants.F_OK, (err) => {
 
       fs.writeFile(path, body, err => {
         if (err) {
-          console.log(`File path is invalid`)
-          return err;
+          console.log(`File path is invalid \n ${err}`)
+          process.exit();
         }
         console.log(`Downloaded and saved ${body.length} bytes to ${path}`);
         process.exit()          
